@@ -1,0 +1,45 @@
+Jose Escobar
+Lab 3308
+Tasks:
+
+Task 1:
+
+1. mkdir fileName
+2. mv oldName newName
+3. cd
+4. cp wantCopyofThis putHere
+5. rm filetoDelete
+6. 
+	a. mkdir -p tmp
+	b. rmdir tmp
+7. cat ~/Location/fileName
+8. less fileName
+	nano fileName
+9. head fileName
+10. tail fileName
+11. grep -i "word" <fileName>
+12. pwd
+13. zip -r zipName dir.zip
+14. unzip dir.zip
+15. tar -zcvf dir.tar.bz2 fileName
+16. tar -jxvf dir.tar.bz2
+17. touch -mt YYYMMDDhhmm
+
+
+Task 2:
+
+1. sort -k1 lab1file
+2. sort -n -t: -k3 lab1file
+3. sort -k4, 4 -n -t: -k3 lab1file
+4. grep -i "Marx" lab1file
+5. wc -l /fileName
+6. wc -l /fileName > tmp
+7. 
+	a. wc -l /fileName > getUniqueGID.sh
+	b. ok
+	c. right
+	d. sudo chmod 777 fileName
+	e. sudo chmod fileName 
+	f. the program is being ran with permissions not allowed in normal enviorment
+	g. sudo fileName
+	h. chmod 777 fileName
