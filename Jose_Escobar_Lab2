@@ -1,0 +1,172 @@
+#Jose Escobar
+#Lab2
+
+
+Task 1:
+OK!
+
+
+Task 2:
+	a.)
+	11a12
+	> Cranberry
+	21d21
+	< Jackfruit
+	31a32
+	> Nectarine
+	40a42
+	> Prickly Pear
+	b.)
+	">" are things found in fruitsOld that are not found in fruitsNew
+	"<" are things found in fruitsNew not in fruitsOld, of whih there are none.
+	c.) -c uses context output format. It shows which line numbers it has compared from each file to get the desired output. + = line in second file needed in the first file, - indicate first file that needs to be deleted.
+	*** fruitsNew.txt	2016-01-19 17:45:54.000000000 -0700
+	--- fruitsOld.txt	2016-01-19 17:45:54.000000000 -0700
+	***************
+	*** 9,14 ****
+	--- 9,15 ----
+	  Camu Camu berry
+	  Cherries
+	  Coconut
+	+ Cranberry
+	  Cucumber
+	  Currents
+	  Dates
+	***************
+	*** 18,24 ****
+	  Gooseberry
+	  Grapefruit
+	  Grapes
+	- Jackfruit
+	  Kiwi
+	  Kumquat
+	  Lemon
+	--- 19,24 ----
+	***************
+	*** 29,34 ****
+	--- 29,35 ----
+	  Mangosteen
+	  Melon
+	  Mulberry
+	+ Nectarine
+	  Orange
+	  Papaya
+	  Passion Fruit
+	***************
+	*** 38,43 ****
+	--- 39,45 ----
+	  Plum
+	  Pomegranate
+	  Pomelo 
+	+ Prickly Pear
+	  Prunes
+	  Raspberries
+	  Strawberries
+
+Step 3:
+	wc output: # of lines, # of words, # of characters
+	a.) # of lines in testPasswd.tx: 15
+	b.) # of Characters: 692
+
+Step 4:
+	a.)
+	command: cut -f 1 -d ':' testPasswd.txt
+	root
+	daemon
+	sys
+	games
+	mail
+	www-data
+	backup
+	nobody
+	syslog
+	whoopsie
+	user
+	sshd
+	ntp
+	mysql
+	vboxadd
+	b.)
+	command: cut -f 2,4 -d " " grades.txt
+	LN HW1
+	Slaven 1
+	Eustathios 1
+	Saša 0
+	Gerard 1
+	Babur 0
+	Marin 0
+	Marko 1
+Step 5:
+	a. & b.)
+	cut -f 4 -d ":" testPasswd.txt | sort -n | uniq > outputLab2.txt
+	c.) 
+	Command: grep "^[mws]" testPasswd.txt | cut -f 1,6 -d ":"
+	sys:/dev
+	mail:/var/mail
+	www-data:/var/www
+	syslog:/home/syslog
+	whoopsie:/nonexistent
+	sshd:/var/run/sshd
+	mysql:/nonexistent
+
+Step 6: 
+	a.)
+		i.)
+		Command: sed 's/[a-zA-Z]//g' leetSpeak.txt
+		0 4 34 4 053 70 473 7 0 4'7 43 17 1
+		ii.)
+		Command: sed 's/[0-9]//g' leetSpeak.txt
+		yu cn ld  hr  wr bu yu cn' mk  drnk
+		iii.)
+		Command: sed 's/[0-9]/_/g' leetSpeak.txt
+		y_u c_n l__d _ h_r__ __ w___r bu_ y_u c_n'_ m_k_ __ dr_nk
+	b.) Script:
+			sed 's/[0]/o/g' leetSpeak.txt
+			sed 's/[1]/i/g' leetSpeak.txt
+			sed 's/[3]/e/g' leetSpeak.txt
+			sed 's/[4]/a/g' leetSpeak.txt
+			sed 's/[5]/s/g' leetSpeak.txt
+			sed 's/[7]/t/g' leetSpeak.txt
+
+		Command/ Output:
+		sed 's/[7]/t/g ; s/[1]/i/g ; s/[3]/e/g ; s/[4]/a/g ; s/[5]/s/g ; s/[0]/o/g' leetSpeak.txt
+				you can lead a horse to water but you can't make it drink
+
+	c.) You would have to generalize the input file at the end of the script so any file name could work.
+
+Step 7: 
+	a.)
+		Command: awk '{sum = $3+$4+$5+$6+$7 ; avg = sum/5 ; print $1,$2,avg}' grades.txt
+				Output:
+					FN LN 0
+					Ryan Slaven 0.8
+					Jephthah Eustathios 0.4
+					Andreas Saša 0.6
+					Godofredo Gerard 1
+					Edwin Babur 0.8
+					Ahmad Marin 0
+					Jett Marko 0.8
+	b.)
+		Command:awk '{total = total + $3 ; avg = total/7; print avg}' grades.txt
+				Output:
+					0
+					0.142857
+					0.142857
+					0.285714
+					0.428571
+					0.571429
+					0.571429
+					0.714286
+Step 8:
+	a.)
+		Command: grep -cw "[100-999][100-999][1000-9999]" regex_practice_data.txt
+				Output: 780
+	b.)
+		Command: egrep '303'-'441' -c regex_practice_data.txt
+				Output: 51
+	c.)
+		Command:grep [@] -c regex_practice_data.txt
+				Output:17706
+	d.)
+		Command: egrep ".gov\>" -c regex_practice_data.txt
+				output: 53

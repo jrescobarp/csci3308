@@ -1,0 +1,35 @@
+Jose Escobar
+CS Methods and tools
+
+1.
+ 	Script using awk:
+
+ 		awk '{sum = $4+$5+$6 ; avg = sum/3 ; print $2,$3,avg}'
+
+ 	Other script:
+ 		if [ $# -ne 1 ]
+		then 
+			echo "Usage: GradesAwk.sh filename"
+			exit 1
+		fi
+
+		filename="$1"
+
+
+2.
+	1. user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep ^[0-9] -c  regex_practice_data.txt
+		1879
+	2. user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep ^[^aeiou] -c  regex_practice_data.txt 
+		53250
+	3.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep -E '^[[:alpha:]]{12}$' -c  regex_practice_data.txt
+		1257
+	4.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep '^[0-9]\{3\}-[0-9]\{3\}-[0-9]\{4\$' regex_practice_data.txt -c
+		767
+	5.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$  grep '^303-[0-9]\{3\}-[0-9]\{4\}$' -c regex_practice_data.txt
+		406
+	6.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep  '^[aeiou].*[0-9]$' -c  regex_practice_data.txt
+		1338
+	7.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep  'geocities.com' -c  regex_practice_data.txt
+		6619
+	8.user@cu-cs-vm:~/Dropbox/CSCI3308/hw1$ grep '@.*[.A-Za-z]\{3\}$' regex_practice_data.txt -c
+		17706
